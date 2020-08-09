@@ -16,7 +16,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(brightness: Brightness.dark, accentColor: Colors.cyan),
       home: Scaffold(
         body: Container(
-          color: Colors.lightBlue[200],
+          color: Colors.lightBlue[50],
           child: const Center(
             child: Text(
               'Nothing to see here yet.\nCome back later.',
