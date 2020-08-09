@@ -1,6 +1,6 @@
 import 'package:flutter/foundation.dart';
 
-import '../../../domain/forecast/entity/forecast.dart';
+import '../../domain/entity/forecast.dart';
 
 class ForecastModel extends Forecast {
   const ForecastModel({

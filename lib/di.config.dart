@@ -4,19 +4,19 @@
 // InjectableConfigGenerator
 // **************************************************************************
 
-import 'package:http/http.dart';
 import 'package:data_connection_checker/data_connection_checker.dart';
 import 'package:get_it/get_it.dart';
+import 'package:http/http.dart';
 import 'package:injectable/injectable.dart';
 
-import 'data/forecast/data_source/c_forecast_remote_data_source.dart';
-import 'domain/forecast/repository/c_forecast_repository.dart';
 import 'core/network/network_info.dart';
-import 'data/forecast/data_source/forecast_remote_data_source.dart';
-import 'data/forecast/repository/forecast_repository.dart';
-import 'domain/forecast/transformer/forecast_transformer.dart';
-import 'domain/forecast/use_case/get_forecasts.dart';
 import 'di.dart';
+import 'forecast/data/data_source/c_forecast_remote_data_source.dart';
+import 'forecast/data/data_source/forecast_remote_data_source.dart';
+import 'forecast/data/repository/forecast_repository.dart';
+import 'forecast/domain/repository/c_forecast_repository.dart';
+import 'forecast/domain/transformer/forecast_transformer.dart';
+import 'forecast/domain/use_case/get_forecasts.dart';
 
 /// adds generated dependencies
 /// to the provided [GetIt] instance

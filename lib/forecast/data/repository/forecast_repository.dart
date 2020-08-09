@@ -5,8 +5,8 @@ import 'package:injectable/injectable.dart';
 import '../../../core/error/exceptions.dart';
 import '../../../core/error/failures.dart';
 import '../../../core/network/network_info.dart';
-import '../../../domain/forecast/entity/forecast.dart';
-import '../../../domain/forecast/repository/c_forecast_repository.dart';
+import '../../domain/entity/forecast.dart';
+import '../../domain/repository/c_forecast_repository.dart';
 import '../data_source/c_forecast_remote_data_source.dart';
 
 @LazySingleton(as: CForecastRepository)
