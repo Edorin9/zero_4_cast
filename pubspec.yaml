@@ -22,7 +22,6 @@ dependencies:
   # functionality
   data_connection_checker: ^0.3.4
   http: ^0.12.2
-  shared_preferences: ^0.5.8
 
 dev_dependencies:
   flutter_test:
