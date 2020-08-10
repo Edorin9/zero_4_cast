@@ -27,18 +27,14 @@ class _Body extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     ForecastBloc.of(context).pageInitialized();
-    return Container(
-      color: Colors.lightBlue[50],
-      child: const Center(
-        child: Text(
-          'Nothing to see here yet.\nCome back later.',
-          style: TextStyle(
-            color: Colors.black,
-            fontWeight: FontWeight.bold,
-            fontSize: 24,
-          ),
-          textAlign: TextAlign.center,
+    return const Center(
+      child: Text(
+        'Nothing to see here yet.\nCome back later.',
+        style: TextStyle(
+          fontWeight: FontWeight.bold,
+          fontSize: 24,
         ),
+        textAlign: TextAlign.center,
       ),
     );
   }

@@ -37,7 +37,7 @@ class ForecastModel extends Forecast {
       condition: json['weather'][0]['main']?.toString(),
       description: json['weather'][0]['description']?.toString(),
       icon: json['weather'][0]['icon']?.toString(),
-      dateText: json['dt_text']?.toString(),
+      dateText: json['dt_txt']?.toString(),
       dateUnix: (json['dt'] as num)?.toInt(),
     );
   }

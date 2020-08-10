@@ -10,12 +10,14 @@ class ForecastTransformer {
   Either<Failure, List<List<Forecast>>> groupByDate(List<Forecast> forecasts) {
     try {
       // unique dates with times removed from string value
-      final uniqueDateTexts =
-          forecasts.map((e) => e.dateText.split(" ").first).toSet().toList();
+      final uniqueDateTexts = forecasts
+          .map((forecast) => forecast.dateText?.split(" ")?.first)
+          .toSet()
+          .toList();
       // map unique dates into lists of forecasts grouped by date
       return Right(uniqueDateTexts
           .map((date) => forecasts
-              .where((forecast) => forecast.dateText.contains(date))
+              .where((forecast) => forecast.dateText?.contains(date) == true)
               .toList())
           .toList());
     } on Exception catch (err) {
