@@ -8,11 +8,11 @@ import '../repository/c_forecast_repository.dart';
 import '../transformer/forecast_transformer.dart';
 
 @lazySingleton
-class GetForecasts implements UseCase<List<List<Forecast>>, NoParams> {
+class GetGroupedForecasts implements UseCase<List<List<Forecast>>, NoParams> {
   final CForecastRepository repository;
   final ForecastTransformer transformer;
 
-  GetForecasts(this.repository, this.transformer);
+  GetGroupedForecasts(this.repository, this.transformer);
 
   @override
   Future<Either<Failure, List<List<Forecast>>>> call(NoParams _) async {

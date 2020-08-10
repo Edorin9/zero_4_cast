@@ -16,7 +16,8 @@ import 'forecast/data/data_source/forecast_remote_data_source.dart';
 import 'forecast/data/repository/forecast_repository.dart';
 import 'forecast/domain/repository/c_forecast_repository.dart';
 import 'forecast/domain/transformer/forecast_transformer.dart';
-import 'forecast/domain/use_case/get_forecasts.dart';
+import 'forecast/domain/use_case/get_grouped_forecasts.dart';
+import 'forecast/presentation/bloc/forecast_bloc.dart';
 
 /// adds generated dependencies
 /// to the provided [GetIt] instance
@@ -39,8 +40,10 @@ GetIt $initGetIt(
   gh.lazySingleton<CForecastRepository>(() => ForecastRepository(
       remoteDataSource: get<CForecastRemoteDataSource>(),
       networkInfo: get<CNetworkInfo>()));
-  gh.lazySingleton<GetForecasts>(() =>
-      GetForecasts(get<CForecastRepository>(), get<ForecastTransformer>()));
+  gh.lazySingleton<GetGroupedForecasts>(() => GetGroupedForecasts(
+      get<CForecastRepository>(), get<ForecastTransformer>()));
+  gh.factory<ForecastBloc>(
+      () => ForecastBloc(usecase: get<GetGroupedForecasts>()));
   return get;
 }
 
