@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:injectable/injectable.dart';
+import 'package:zero_4_cast/forecast/presentation/pages/forecast_page.dart';
 
 import 'di.dart';
 
@@ -14,22 +15,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Zero4Cast',
       theme: ThemeData(brightness: Brightness.dark, accentColor: Colors.cyan),
-      home: Scaffold(
-        body: Container(
-          color: Colors.lightBlue[50],
-          child: const Center(
-            child: Text(
-              'Nothing to see here yet.\nCome back later.',
-              style: TextStyle(
-                color: Colors.black,
-                fontWeight: FontWeight.bold,
-                fontSize: 24,
-              ),
-              textAlign: TextAlign.center,
-            ),
-          ),
-        ),
-      ),
+      home: const ForecastPage(),
     );
   }
 }

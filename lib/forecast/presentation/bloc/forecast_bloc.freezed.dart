@@ -13,8 +13,8 @@ class _$ForecastEventTearOff {
   const _$ForecastEventTearOff();
 
 // ignore: unused_element
-  PageCreated pageCreated() {
-    return const PageCreated();
+  PageInitialized pageInitialized() {
+    return const PageInitialized();
   }
 }
 
@@ -24,20 +24,20 @@ const $ForecastEvent = _$ForecastEventTearOff();
 mixin _$ForecastEvent {
   @optionalTypeArgs
   Result when<Result extends Object>({
-    @required Result pageCreated(),
+    @required Result pageInitialized(),
   });
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
-    Result pageCreated(),
+    Result pageInitialized(),
     @required Result orElse(),
   });
   @optionalTypeArgs
   Result map<Result extends Object>({
-    @required Result pageCreated(PageCreated value),
+    @required Result pageInitialized(PageInitialized value),
   });
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
-    Result pageCreated(PageCreated value),
+    Result pageInitialized(PageInitialized value),
     @required Result orElse(),
   });
 }
@@ -57,33 +57,34 @@ class _$ForecastEventCopyWithImpl<$Res>
   final $Res Function(ForecastEvent) _then;
 }
 
-abstract class $PageCreatedCopyWith<$Res> {
-  factory $PageCreatedCopyWith(
-          PageCreated value, $Res Function(PageCreated) then) =
-      _$PageCreatedCopyWithImpl<$Res>;
+abstract class $PageInitializedCopyWith<$Res> {
+  factory $PageInitializedCopyWith(
+          PageInitialized value, $Res Function(PageInitialized) then) =
+      _$PageInitializedCopyWithImpl<$Res>;
 }
 
-class _$PageCreatedCopyWithImpl<$Res> extends _$ForecastEventCopyWithImpl<$Res>
-    implements $PageCreatedCopyWith<$Res> {
-  _$PageCreatedCopyWithImpl(
-      PageCreated _value, $Res Function(PageCreated) _then)
-      : super(_value, (v) => _then(v as PageCreated));
+class _$PageInitializedCopyWithImpl<$Res>
+    extends _$ForecastEventCopyWithImpl<$Res>
+    implements $PageInitializedCopyWith<$Res> {
+  _$PageInitializedCopyWithImpl(
+      PageInitialized _value, $Res Function(PageInitialized) _then)
+      : super(_value, (v) => _then(v as PageInitialized));
 
   @override
-  PageCreated get _value => super._value as PageCreated;
+  PageInitialized get _value => super._value as PageInitialized;
 }
 
-class _$PageCreated implements PageCreated {
-  const _$PageCreated();
+class _$PageInitialized implements PageInitialized {
+  const _$PageInitialized();
 
   @override
   String toString() {
-    return 'ForecastEvent.pageCreated()';
+    return 'ForecastEvent.pageInitialized()';
   }
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is PageCreated);
+    return identical(this, other) || (other is PageInitialized);
   }
 
   @override
@@ -92,21 +93,21 @@ class _$PageCreated implements PageCreated {
   @override
   @optionalTypeArgs
   Result when<Result extends Object>({
-    @required Result pageCreated(),
+    @required Result pageInitialized(),
   }) {
-    assert(pageCreated != null);
-    return pageCreated();
+    assert(pageInitialized != null);
+    return pageInitialized();
   }
 
   @override
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
-    Result pageCreated(),
+    Result pageInitialized(),
     @required Result orElse(),
   }) {
     assert(orElse != null);
-    if (pageCreated != null) {
-      return pageCreated();
+    if (pageInitialized != null) {
+      return pageInitialized();
     }
     return orElse();
   }
@@ -114,28 +115,28 @@ class _$PageCreated implements PageCreated {
   @override
   @optionalTypeArgs
   Result map<Result extends Object>({
-    @required Result pageCreated(PageCreated value),
+    @required Result pageInitialized(PageInitialized value),
   }) {
-    assert(pageCreated != null);
-    return pageCreated(this);
+    assert(pageInitialized != null);
+    return pageInitialized(this);
   }
 
   @override
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
-    Result pageCreated(PageCreated value),
+    Result pageInitialized(PageInitialized value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
-    if (pageCreated != null) {
-      return pageCreated(this);
+    if (pageInitialized != null) {
+      return pageInitialized(this);
     }
     return orElse();
   }
 }
 
-abstract class PageCreated implements ForecastEvent {
-  const factory PageCreated() = _$PageCreated;
+abstract class PageInitialized implements ForecastEvent {
+  const factory PageInitialized() = _$PageInitialized;
 }
 
 class _$ForecastStateTearOff {
