@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:injectable/injectable.dart';
-import 'package:zero_4_cast/forecast/presentation/pages/forecast_page.dart';
 
 import 'di.dart';
+import 'forecast/presentation/pages/main_page.dart';
 
 void main() {
   configInjection(Environment.dev);
@@ -15,7 +15,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Zero4Cast',
       theme: ThemeData(brightness: Brightness.dark, accentColor: Colors.cyan),
-      home: const ForecastPage(),
+      home: const MainPage(),
     );
   }
 }
