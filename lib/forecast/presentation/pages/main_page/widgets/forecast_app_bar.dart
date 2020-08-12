@@ -12,6 +12,7 @@ class ForecastAppBar extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocBuilder<ForecastBloc, ForecastState>(
       builder: (context, state) => SliverAppBar(
+        backgroundColor: Colors.grey[900],
         expandedHeight: MediaQuery.of(context).size.height / 3.6,
         floating: true,
         snap: true,
