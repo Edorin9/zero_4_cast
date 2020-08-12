@@ -1,7 +1,9 @@
+import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../bloc/forecast_bloc.dart';
+import '../../widgets/header_forecast.dart';
 
 class TabbedForecastAppBar extends StatelessWidget {
   const TabbedForecastAppBar({Key key}) : super(key: key);
@@ -13,16 +15,16 @@ class TabbedForecastAppBar extends StatelessWidget {
         expandedHeight: MediaQuery.of(context).size.height / 3.6,
         floating: true,
         snap: true,
-        flexibleSpace: const FlexibleSpaceBar(
-          background: Center(
-              child: Text(
-            'Tabbed Forecasts Here',
-            style: TextStyle(
-              fontWeight: FontWeight.bold,
-              fontSize: 24,
+        flexibleSpace: FlexibleSpaceBar(
+          background: CarouselSlider(
+            items: state.headerForecasts
+                .map((forecast) => HeaderForecsat(forecast: forecast))
+                .toList(),
+            options: CarouselOptions(
+              autoPlay: true,
+              enableInfiniteScroll: false,
             ),
-            textAlign: TextAlign.center,
-          )),
+          ),
         ),
       ),
     );

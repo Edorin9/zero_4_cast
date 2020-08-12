@@ -18,8 +18,9 @@ part 'forecast_state.dart';
 class ForecastBloc extends Bloc<ForecastEvent, ForecastState> {
   final GetGroupedForecasts getGroupedForecasts;
 
-  ForecastBloc({@required GetGroupedForecasts usecase})
-      : assert(usecase != null),
+  ForecastBloc({
+    @required GetGroupedForecasts usecase,
+  })  : assert(usecase != null),
         getGroupedForecasts = usecase,
         super(ForecastState.initial());
 
