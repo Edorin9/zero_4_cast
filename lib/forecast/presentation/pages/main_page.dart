@@ -3,8 +3,8 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../../di.dart';
 import '../bloc/forecast_bloc.dart';
+import 'widgets/forecast_app_bar.dart';
 import 'widgets/forecasts_list.dart';
-import 'widgets/tabbed_forecast_app_bar.dart';
 
 class MainPage extends StatelessWidget {
   const MainPage({Key key}) : super(key: key);
@@ -29,7 +29,7 @@ class _Body extends StatelessWidget {
     return const SafeArea(
       child: CustomScrollView(
         slivers: [
-          TabbedForecastAppBar(),
+          ForecastAppBar(),
           ForecastsList(),
         ],
       ),

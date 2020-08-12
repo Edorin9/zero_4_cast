@@ -5,8 +5,8 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import '../../bloc/forecast_bloc.dart';
 import '../../widgets/header_forecast.dart';
 
-class TabbedForecastAppBar extends StatelessWidget {
-  const TabbedForecastAppBar({Key key}) : super(key: key);
+class ForecastAppBar extends StatelessWidget {
+  const ForecastAppBar({Key key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
