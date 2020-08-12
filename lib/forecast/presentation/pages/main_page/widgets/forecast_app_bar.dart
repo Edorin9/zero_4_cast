@@ -23,6 +23,7 @@ class ForecastAppBar extends StatelessWidget {
                 .toList(),
             options: CarouselOptions(
               autoPlay: true,
+              enableInfiniteScroll: false,
               viewportFraction: 1,
             ),
           ),
