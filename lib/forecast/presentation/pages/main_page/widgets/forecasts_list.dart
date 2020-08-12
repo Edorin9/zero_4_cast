@@ -3,10 +3,10 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:reorderables/reorderables.dart';
 
-import '../../../../core/util/date_formatter.dart';
-import '../../bloc/forecast_bloc.dart';
-import '../../widgets/date_heading.dart';
-import '../../widgets/forecast_row.dart';
+import '../../../../../core/util/date_formatter.dart';
+import '../../../bloc/forecast_bloc.dart';
+import '../../../widgets/date_heading.dart';
+import '../../../widgets/forecast_row.dart';
 
 class ForecastsList extends HookWidget {
   const ForecastsList({Key key}) : super(key: key);

@@ -2,8 +2,8 @@ import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import '../../bloc/forecast_bloc.dart';
-import '../../widgets/header_forecast.dart';
+import '../../../bloc/forecast_bloc.dart';
+import '../../../widgets/header_forecast.dart';
 
 class ForecastAppBar extends StatelessWidget {
   const ForecastAppBar({Key key}) : super(key: key);
@@ -22,7 +22,7 @@ class ForecastAppBar extends StatelessWidget {
                 .toList(),
             options: CarouselOptions(
               autoPlay: true,
-              enableInfiniteScroll: false,
+              viewportFraction: 1,
             ),
           ),
         ),

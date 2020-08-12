@@ -302,12 +302,14 @@ class _$ForecastStateTearOff {
       {@required List<Forecast> headerForecasts,
       @required List<List<Forecast>> listForecasts,
       @required bool isLoading,
-      @required String error}) {
+      @required String error,
+      @required @nullable Forecast selectedForecast}) {
     return _ForecastState(
       headerForecasts: headerForecasts,
       listForecasts: listForecasts,
       isLoading: isLoading,
       error: error,
+      selectedForecast: selectedForecast,
     );
   }
 }
@@ -320,6 +322,8 @@ mixin _$ForecastState {
   List<List<Forecast>> get listForecasts;
   bool get isLoading;
   String get error;
+  @nullable
+  Forecast get selectedForecast;
 
   $ForecastStateCopyWith<ForecastState> get copyWith;
 }
@@ -332,7 +336,8 @@ abstract class $ForecastStateCopyWith<$Res> {
       {List<Forecast> headerForecasts,
       List<List<Forecast>> listForecasts,
       bool isLoading,
-      String error});
+      String error,
+      @nullable Forecast selectedForecast});
 }
 
 class _$ForecastStateCopyWithImpl<$Res>
@@ -349,6 +354,7 @@ class _$ForecastStateCopyWithImpl<$Res>
     Object listForecasts = freezed,
     Object isLoading = freezed,
     Object error = freezed,
+    Object selectedForecast = freezed,
   }) {
     return _then(_value.copyWith(
       headerForecasts: headerForecasts == freezed
@@ -359,6 +365,9 @@ class _$ForecastStateCopyWithImpl<$Res>
           : listForecasts as List<List<Forecast>>,
       isLoading: isLoading == freezed ? _value.isLoading : isLoading as bool,
       error: error == freezed ? _value.error : error as String,
+      selectedForecast: selectedForecast == freezed
+          ? _value.selectedForecast
+          : selectedForecast as Forecast,
     ));
   }
 }
@@ -373,7 +382,8 @@ abstract class _$ForecastStateCopyWith<$Res>
       {List<Forecast> headerForecasts,
       List<List<Forecast>> listForecasts,
       bool isLoading,
-      String error});
+      String error,
+      @nullable Forecast selectedForecast});
 }
 
 class __$ForecastStateCopyWithImpl<$Res>
@@ -392,6 +402,7 @@ class __$ForecastStateCopyWithImpl<$Res>
     Object listForecasts = freezed,
     Object isLoading = freezed,
     Object error = freezed,
+    Object selectedForecast = freezed,
   }) {
     return _then(_ForecastState(
       headerForecasts: headerForecasts == freezed
@@ -402,6 +413,9 @@ class __$ForecastStateCopyWithImpl<$Res>
           : listForecasts as List<List<Forecast>>,
       isLoading: isLoading == freezed ? _value.isLoading : isLoading as bool,
       error: error == freezed ? _value.error : error as String,
+      selectedForecast: selectedForecast == freezed
+          ? _value.selectedForecast
+          : selectedForecast as Forecast,
     ));
   }
 }
@@ -411,7 +425,8 @@ class _$_ForecastState extends _ForecastState {
       {@required this.headerForecasts,
       @required this.listForecasts,
       @required this.isLoading,
-      @required this.error})
+      @required this.error,
+      @required @nullable this.selectedForecast})
       : assert(headerForecasts != null),
         assert(listForecasts != null),
         assert(isLoading != null),
@@ -426,10 +441,13 @@ class _$_ForecastState extends _ForecastState {
   final bool isLoading;
   @override
   final String error;
+  @override
+  @nullable
+  final Forecast selectedForecast;
 
   @override
   String toString() {
-    return 'ForecastState(headerForecasts: $headerForecasts, listForecasts: $listForecasts, isLoading: $isLoading, error: $error)';
+    return 'ForecastState(headerForecasts: $headerForecasts, listForecasts: $listForecasts, isLoading: $isLoading, error: $error, selectedForecast: $selectedForecast)';
   }
 
   @override
@@ -446,7 +464,10 @@ class _$_ForecastState extends _ForecastState {
                 const DeepCollectionEquality()
                     .equals(other.isLoading, isLoading)) &&
             (identical(other.error, error) ||
-                const DeepCollectionEquality().equals(other.error, error)));
+                const DeepCollectionEquality().equals(other.error, error)) &&
+            (identical(other.selectedForecast, selectedForecast) ||
+                const DeepCollectionEquality()
+                    .equals(other.selectedForecast, selectedForecast)));
   }
 
   @override
@@ -455,7 +476,8 @@ class _$_ForecastState extends _ForecastState {
       const DeepCollectionEquality().hash(headerForecasts) ^
       const DeepCollectionEquality().hash(listForecasts) ^
       const DeepCollectionEquality().hash(isLoading) ^
-      const DeepCollectionEquality().hash(error);
+      const DeepCollectionEquality().hash(error) ^
+      const DeepCollectionEquality().hash(selectedForecast);
 
   @override
   _$ForecastStateCopyWith<_ForecastState> get copyWith =>
@@ -468,7 +490,8 @@ abstract class _ForecastState extends ForecastState {
       {@required List<Forecast> headerForecasts,
       @required List<List<Forecast>> listForecasts,
       @required bool isLoading,
-      @required String error}) = _$_ForecastState;
+      @required String error,
+      @required @nullable Forecast selectedForecast}) = _$_ForecastState;
 
   @override
   List<Forecast> get headerForecasts;
@@ -478,6 +501,9 @@ abstract class _ForecastState extends ForecastState {
   bool get isLoading;
   @override
   String get error;
+  @override
+  @nullable
+  Forecast get selectedForecast;
   @override
   _$ForecastStateCopyWith<_ForecastState> get copyWith;
 }

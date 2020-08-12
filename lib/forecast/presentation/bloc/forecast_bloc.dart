@@ -30,6 +30,7 @@ class ForecastBloc extends Bloc<ForecastEvent, ForecastState> {
       BlocProvider.of<ForecastBloc>(context);
 
   void pageInitialized() => add(const PageInitialized());
+
   void listReordered(
     int groupIndex,
     int oldIndex,

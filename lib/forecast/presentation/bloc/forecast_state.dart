@@ -9,6 +9,7 @@ abstract class ForecastState implements _$ForecastState {
     @required List<List<Forecast>> listForecasts,
     @required bool isLoading,
     @required String error,
+    @required @nullable Forecast selectedForecast,
   }) = _ForecastState;
 
   factory ForecastState.initial() => const ForecastState(
@@ -16,16 +17,19 @@ abstract class ForecastState implements _$ForecastState {
         listForecasts: <List<Forecast>>[],
         isLoading: false,
         error: "",
+        selectedForecast: null,
       );
 
   ForecastState loading() => copyWith(
         isLoading: true,
         error: "",
+        selectedForecast: null,
       );
 
   ForecastState withError(String message) => copyWith(
         isLoading: false,
         error: message,
+        selectedForecast: null,
       );
 
   ForecastState loaded({
@@ -37,10 +41,6 @@ abstract class ForecastState implements _$ForecastState {
         listForecasts: upcomingForecasts,
         isLoading: false,
         error: "",
+        selectedForecast: null,
       );
-
-  ForecastState newList(
-    List<List<Forecast>> upcomingForecasts,
-  ) =>
-      copyWith(listForecasts: upcomingForecasts ?? listForecasts);
 }

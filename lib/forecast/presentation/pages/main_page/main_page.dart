@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import '../../../di.dart';
-import '../bloc/forecast_bloc.dart';
+import '../../../../di.dart';
+import '../../bloc/forecast_bloc.dart';
 import 'widgets/forecast_app_bar.dart';
 import 'widgets/forecasts_list.dart';
 
@@ -26,13 +26,11 @@ class _Body extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     ForecastBloc.of(context).pageInitialized();
-    return const SafeArea(
-      child: CustomScrollView(
-        slivers: [
-          ForecastAppBar(),
-          ForecastsList(),
-        ],
-      ),
+    return const CustomScrollView(
+      slivers: [
+        ForecastAppBar(),
+        ForecastsList(),
+      ],
     );
   }
 }
