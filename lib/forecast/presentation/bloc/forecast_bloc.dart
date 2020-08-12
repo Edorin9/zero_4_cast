@@ -29,12 +29,24 @@ class ForecastBloc extends Bloc<ForecastEvent, ForecastState> {
       BlocProvider.of<ForecastBloc>(context);
 
   void pageInitialized() => add(const PageInitialized());
+  void listReordered(
+    int groupIndex,
+    int oldIndex,
+    int newIndex,
+  ) =>
+      add(ListReordered(
+        groupIndex,
+        oldIndex,
+        newIndex,
+      ));
 
   // Overrides
 
   @override
-  Stream<ForecastState> mapEventToState(ForecastEvent event) =>
-      event.map(pageInitialized: _onPageInitialized);
+  Stream<ForecastState> mapEventToState(ForecastEvent event) => event.map(
+        pageInitialized: _onPageInitialized,
+        listReordered: _onListReordered,
+      );
 
   // Private Methods
 
@@ -47,12 +59,25 @@ class ForecastBloc extends Bloc<ForecastEvent, ForecastState> {
         yield state.withError(failure.errorMessage);
       },
       (groupedForecasts) async* {
-        print(groupedForecasts);
         yield state.loaded(
           latestForecasts: groupedForecasts.first,
           upcomingForecasts: groupedForecasts.sublist(1),
         );
       },
     );
+  }
+
+  Stream<ForecastState> _onListReordered(
+    ListReordered event,
+  ) async* {
+    // refresh - process new list - set
+    yield state.loading();
+    final newGroupList = state.listForecasts[event.groupIndex];
+    final forecast = newGroupList.removeAt(event.oldIndex);
+    newGroupList.insert(event.newIndex, forecast);
+    final reorderedUpcomingForecasts = state.listForecasts
+      ..removeAt(event.groupIndex)
+      ..insert(event.groupIndex, newGroupList);
+    yield state.loaded(upcomingForecasts: reorderedUpcomingForecasts);
   }
 }

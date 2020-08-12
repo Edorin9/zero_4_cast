@@ -16,6 +16,15 @@ class _$ForecastEventTearOff {
   PageInitialized pageInitialized() {
     return const PageInitialized();
   }
+
+// ignore: unused_element
+  ListReordered listReordered(int groupIndex, int oldIndex, int newIndex) {
+    return ListReordered(
+      groupIndex,
+      oldIndex,
+      newIndex,
+    );
+  }
 }
 
 // ignore: unused_element
@@ -25,19 +34,23 @@ mixin _$ForecastEvent {
   @optionalTypeArgs
   Result when<Result extends Object>({
     @required Result pageInitialized(),
+    @required Result listReordered(int groupIndex, int oldIndex, int newIndex),
   });
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
     Result pageInitialized(),
+    Result listReordered(int groupIndex, int oldIndex, int newIndex),
     @required Result orElse(),
   });
   @optionalTypeArgs
   Result map<Result extends Object>({
     @required Result pageInitialized(PageInitialized value),
+    @required Result listReordered(ListReordered value),
   });
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
     Result pageInitialized(PageInitialized value),
+    Result listReordered(ListReordered value),
     @required Result orElse(),
   });
 }
@@ -94,8 +107,10 @@ class _$PageInitialized implements PageInitialized {
   @optionalTypeArgs
   Result when<Result extends Object>({
     @required Result pageInitialized(),
+    @required Result listReordered(int groupIndex, int oldIndex, int newIndex),
   }) {
     assert(pageInitialized != null);
+    assert(listReordered != null);
     return pageInitialized();
   }
 
@@ -103,6 +118,7 @@ class _$PageInitialized implements PageInitialized {
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
     Result pageInitialized(),
+    Result listReordered(int groupIndex, int oldIndex, int newIndex),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -116,8 +132,10 @@ class _$PageInitialized implements PageInitialized {
   @optionalTypeArgs
   Result map<Result extends Object>({
     @required Result pageInitialized(PageInitialized value),
+    @required Result listReordered(ListReordered value),
   }) {
     assert(pageInitialized != null);
+    assert(listReordered != null);
     return pageInitialized(this);
   }
 
@@ -125,6 +143,7 @@ class _$PageInitialized implements PageInitialized {
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
     Result pageInitialized(PageInitialized value),
+    Result listReordered(ListReordered value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -139,17 +158,153 @@ abstract class PageInitialized implements ForecastEvent {
   const factory PageInitialized() = _$PageInitialized;
 }
 
+abstract class $ListReorderedCopyWith<$Res> {
+  factory $ListReorderedCopyWith(
+          ListReordered value, $Res Function(ListReordered) then) =
+      _$ListReorderedCopyWithImpl<$Res>;
+  $Res call({int groupIndex, int oldIndex, int newIndex});
+}
+
+class _$ListReorderedCopyWithImpl<$Res>
+    extends _$ForecastEventCopyWithImpl<$Res>
+    implements $ListReorderedCopyWith<$Res> {
+  _$ListReorderedCopyWithImpl(
+      ListReordered _value, $Res Function(ListReordered) _then)
+      : super(_value, (v) => _then(v as ListReordered));
+
+  @override
+  ListReordered get _value => super._value as ListReordered;
+
+  @override
+  $Res call({
+    Object groupIndex = freezed,
+    Object oldIndex = freezed,
+    Object newIndex = freezed,
+  }) {
+    return _then(ListReordered(
+      groupIndex == freezed ? _value.groupIndex : groupIndex as int,
+      oldIndex == freezed ? _value.oldIndex : oldIndex as int,
+      newIndex == freezed ? _value.newIndex : newIndex as int,
+    ));
+  }
+}
+
+class _$ListReordered implements ListReordered {
+  const _$ListReordered(this.groupIndex, this.oldIndex, this.newIndex)
+      : assert(groupIndex != null),
+        assert(oldIndex != null),
+        assert(newIndex != null);
+
+  @override
+  final int groupIndex;
+  @override
+  final int oldIndex;
+  @override
+  final int newIndex;
+
+  @override
+  String toString() {
+    return 'ForecastEvent.listReordered(groupIndex: $groupIndex, oldIndex: $oldIndex, newIndex: $newIndex)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is ListReordered &&
+            (identical(other.groupIndex, groupIndex) ||
+                const DeepCollectionEquality()
+                    .equals(other.groupIndex, groupIndex)) &&
+            (identical(other.oldIndex, oldIndex) ||
+                const DeepCollectionEquality()
+                    .equals(other.oldIndex, oldIndex)) &&
+            (identical(other.newIndex, newIndex) ||
+                const DeepCollectionEquality()
+                    .equals(other.newIndex, newIndex)));
+  }
+
+  @override
+  int get hashCode =>
+      runtimeType.hashCode ^
+      const DeepCollectionEquality().hash(groupIndex) ^
+      const DeepCollectionEquality().hash(oldIndex) ^
+      const DeepCollectionEquality().hash(newIndex);
+
+  @override
+  $ListReorderedCopyWith<ListReordered> get copyWith =>
+      _$ListReorderedCopyWithImpl<ListReordered>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  Result when<Result extends Object>({
+    @required Result pageInitialized(),
+    @required Result listReordered(int groupIndex, int oldIndex, int newIndex),
+  }) {
+    assert(pageInitialized != null);
+    assert(listReordered != null);
+    return listReordered(groupIndex, oldIndex, newIndex);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeWhen<Result extends Object>({
+    Result pageInitialized(),
+    Result listReordered(int groupIndex, int oldIndex, int newIndex),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (listReordered != null) {
+      return listReordered(groupIndex, oldIndex, newIndex);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  Result map<Result extends Object>({
+    @required Result pageInitialized(PageInitialized value),
+    @required Result listReordered(ListReordered value),
+  }) {
+    assert(pageInitialized != null);
+    assert(listReordered != null);
+    return listReordered(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeMap<Result extends Object>({
+    Result pageInitialized(PageInitialized value),
+    Result listReordered(ListReordered value),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (listReordered != null) {
+      return listReordered(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class ListReordered implements ForecastEvent {
+  const factory ListReordered(int groupIndex, int oldIndex, int newIndex) =
+      _$ListReordered;
+
+  int get groupIndex;
+  int get oldIndex;
+  int get newIndex;
+  $ListReorderedCopyWith<ListReordered> get copyWith;
+}
+
 class _$ForecastStateTearOff {
   const _$ForecastStateTearOff();
 
 // ignore: unused_element
   _ForecastState call(
-      {@required List<Forecast> topForecasts,
+      {@required List<Forecast> headerForecasts,
       @required List<List<Forecast>> listForecasts,
       @required bool isLoading,
       @required String error}) {
     return _ForecastState(
-      topForecasts: topForecasts,
+      headerForecasts: headerForecasts,
       listForecasts: listForecasts,
       isLoading: isLoading,
       error: error,
@@ -161,7 +316,7 @@ class _$ForecastStateTearOff {
 const $ForecastState = _$ForecastStateTearOff();
 
 mixin _$ForecastState {
-  List<Forecast> get topForecasts;
+  List<Forecast> get headerForecasts;
   List<List<Forecast>> get listForecasts;
   bool get isLoading;
   String get error;
@@ -174,7 +329,7 @@ abstract class $ForecastStateCopyWith<$Res> {
           ForecastState value, $Res Function(ForecastState) then) =
       _$ForecastStateCopyWithImpl<$Res>;
   $Res call(
-      {List<Forecast> topForecasts,
+      {List<Forecast> headerForecasts,
       List<List<Forecast>> listForecasts,
       bool isLoading,
       String error});
@@ -190,15 +345,15 @@ class _$ForecastStateCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object topForecasts = freezed,
+    Object headerForecasts = freezed,
     Object listForecasts = freezed,
     Object isLoading = freezed,
     Object error = freezed,
   }) {
     return _then(_value.copyWith(
-      topForecasts: topForecasts == freezed
-          ? _value.topForecasts
-          : topForecasts as List<Forecast>,
+      headerForecasts: headerForecasts == freezed
+          ? _value.headerForecasts
+          : headerForecasts as List<Forecast>,
       listForecasts: listForecasts == freezed
           ? _value.listForecasts
           : listForecasts as List<List<Forecast>>,
@@ -215,7 +370,7 @@ abstract class _$ForecastStateCopyWith<$Res>
       __$ForecastStateCopyWithImpl<$Res>;
   @override
   $Res call(
-      {List<Forecast> topForecasts,
+      {List<Forecast> headerForecasts,
       List<List<Forecast>> listForecasts,
       bool isLoading,
       String error});
@@ -233,15 +388,15 @@ class __$ForecastStateCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object topForecasts = freezed,
+    Object headerForecasts = freezed,
     Object listForecasts = freezed,
     Object isLoading = freezed,
     Object error = freezed,
   }) {
     return _then(_ForecastState(
-      topForecasts: topForecasts == freezed
-          ? _value.topForecasts
-          : topForecasts as List<Forecast>,
+      headerForecasts: headerForecasts == freezed
+          ? _value.headerForecasts
+          : headerForecasts as List<Forecast>,
       listForecasts: listForecasts == freezed
           ? _value.listForecasts
           : listForecasts as List<List<Forecast>>,
@@ -253,18 +408,18 @@ class __$ForecastStateCopyWithImpl<$Res>
 
 class _$_ForecastState extends _ForecastState {
   const _$_ForecastState(
-      {@required this.topForecasts,
+      {@required this.headerForecasts,
       @required this.listForecasts,
       @required this.isLoading,
       @required this.error})
-      : assert(topForecasts != null),
+      : assert(headerForecasts != null),
         assert(listForecasts != null),
         assert(isLoading != null),
         assert(error != null),
         super._();
 
   @override
-  final List<Forecast> topForecasts;
+  final List<Forecast> headerForecasts;
   @override
   final List<List<Forecast>> listForecasts;
   @override
@@ -274,16 +429,16 @@ class _$_ForecastState extends _ForecastState {
 
   @override
   String toString() {
-    return 'ForecastState(topForecasts: $topForecasts, listForecasts: $listForecasts, isLoading: $isLoading, error: $error)';
+    return 'ForecastState(headerForecasts: $headerForecasts, listForecasts: $listForecasts, isLoading: $isLoading, error: $error)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is _ForecastState &&
-            (identical(other.topForecasts, topForecasts) ||
+            (identical(other.headerForecasts, headerForecasts) ||
                 const DeepCollectionEquality()
-                    .equals(other.topForecasts, topForecasts)) &&
+                    .equals(other.headerForecasts, headerForecasts)) &&
             (identical(other.listForecasts, listForecasts) ||
                 const DeepCollectionEquality()
                     .equals(other.listForecasts, listForecasts)) &&
@@ -297,7 +452,7 @@ class _$_ForecastState extends _ForecastState {
   @override
   int get hashCode =>
       runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(topForecasts) ^
+      const DeepCollectionEquality().hash(headerForecasts) ^
       const DeepCollectionEquality().hash(listForecasts) ^
       const DeepCollectionEquality().hash(isLoading) ^
       const DeepCollectionEquality().hash(error);
@@ -310,13 +465,13 @@ class _$_ForecastState extends _ForecastState {
 abstract class _ForecastState extends ForecastState {
   const _ForecastState._() : super._();
   const factory _ForecastState(
-      {@required List<Forecast> topForecasts,
+      {@required List<Forecast> headerForecasts,
       @required List<List<Forecast>> listForecasts,
       @required bool isLoading,
       @required String error}) = _$_ForecastState;
 
   @override
-  List<Forecast> get topForecasts;
+  List<Forecast> get headerForecasts;
   @override
   List<List<Forecast>> get listForecasts;
   @override

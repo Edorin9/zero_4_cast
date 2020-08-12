@@ -29,7 +29,7 @@ class ForecastRemoteDataSource implements CForecastRemoteDataSource {
   @override
   Future<ForecastResponse> getForecasts() async {
     final response = await client.get(
-      '$baseUrl/forecast?q=manila',
+      '$baseUrl/forecast?q=manila&units=metric',
       headers: defaultHeaders,
     );
     if (response.statusCode == 200) {

@@ -28,6 +28,8 @@ class ForecastModel extends Forecast {
         );
 
   factory ForecastModel.fromJson(Map<String, dynamic> json) {
+    final iconName = json['weather'][0]['icon'];
+    final iconUrl = 'http://openweathermap.org/img/wn/$iconName@2x.png';
     return ForecastModel(
       temperature: (json['main']['temp'] as num)?.toDouble(),
       minTemperature: (json['main']['temp_min'] as num)?.toDouble(),
@@ -36,7 +38,7 @@ class ForecastModel extends Forecast {
       humidity: (json['main']['humidity'] as num)?.toInt(),
       condition: json['weather'][0]['main']?.toString(),
       description: json['weather'][0]['description']?.toString(),
-      icon: json['weather'][0]['icon']?.toString(),
+      icon: iconUrl,
       dateText: json['dt_txt']?.toString(),
       dateUnix: (json['dt'] as num)?.toInt(),
     );
@@ -61,4 +63,7 @@ class ForecastModel extends Forecast {
       "dt_text": dateText
     };
   }
+
+  String iconUrl(String name) =>
+      'http://openweathermap.org/img/wn/$name@2x.png';
 }

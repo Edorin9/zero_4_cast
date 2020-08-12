@@ -22,6 +22,8 @@ dependencies:
   # functionality
   data_connection_checker: ^0.3.4
   http: ^0.12.2
+  reorderables: ^0.3.2
+  intl: ^0.16.1
 
 dev_dependencies:
   flutter_test:
@@ -34,3 +36,6 @@ dev_dependencies:
 
 flutter:
   uses-material-design: true
+  assets:
+    - assets/03d@2x.png
+

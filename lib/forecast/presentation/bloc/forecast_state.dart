@@ -5,14 +5,14 @@ abstract class ForecastState implements _$ForecastState {
   const ForecastState._();
 
   const factory ForecastState({
-    @required List<Forecast> topForecasts,
+    @required List<Forecast> headerForecasts,
     @required List<List<Forecast>> listForecasts,
     @required bool isLoading,
     @required String error,
   }) = _ForecastState;
 
   factory ForecastState.initial() => const ForecastState(
-        topForecasts: <Forecast>[],
+        headerForecasts: <Forecast>[],
         listForecasts: <List<Forecast>>[],
         isLoading: false,
         error: "",
@@ -33,9 +33,14 @@ abstract class ForecastState implements _$ForecastState {
     List<List<Forecast>> upcomingForecasts,
   }) =>
       copyWith(
-        topForecasts: latestForecasts ?? topForecasts,
-        listForecasts: upcomingForecasts ?? listForecasts,
+        headerForecasts: latestForecasts ?? headerForecasts,
+        listForecasts: upcomingForecasts,
         isLoading: false,
         error: "",
       );
+
+  ForecastState newList(
+    List<List<Forecast>> upcomingForecasts,
+  ) =>
+      copyWith(listForecasts: upcomingForecasts ?? listForecasts);
 }
