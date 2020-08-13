@@ -16,6 +16,7 @@ class ForecastRow extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Card(
+      clipBehavior: Clip.antiAlias,
       color: Colors.grey[900],
       child: Center(
         child: InkWell(
